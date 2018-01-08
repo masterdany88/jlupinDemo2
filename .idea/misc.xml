@@ -12,6 +12,8 @@
         <option value="$PROJECT_DIR$/BusinessLogicLayer/currency-converter-business-logic/interfaces/pom.xml" />
         <option value="$PROJECT_DIR$/BusinessLogicLayer/currency-converter-business-logic/implementation/pom.xml" />
         <option value="$PROJECT_DIR$/AccessLayer/exchange-access/implementation/pom.xml" />
+        <option value="$PROJECT_DIR$/DataLayer/dao-data/interfaces/pom.xml" />
+        <option value="$PROJECT_DIR$/DataLayer/dao-data/implementation/pom.xml" />
       </list>
     </option>
   </component>

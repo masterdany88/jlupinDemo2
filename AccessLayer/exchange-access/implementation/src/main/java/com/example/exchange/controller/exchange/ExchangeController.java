@@ -1,14 +1,10 @@
 package com.example.exchange.controller.exchange;
 
-import com.example.exchange.common.pojo.Currency;
-import com.example.exchange.controller.exchange.in.ConvertIn;
-import com.example.exchange.controller.exchange.out.ConvertOut;
+import com.example.exchange.common.dto.Currency;
+import com.example.exchange.common.dto.ConvertDto;
 import com.example.exchange.service.interfaces.CurrencyConverterService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -16,15 +12,19 @@ import java.util.List;
 @RestController
 public class ExchangeController {
     @Autowired
-    private CurrencyConverterService currencyConverterService;
+    CurrencyConverterService currencyConverterService;
 
+    @GetMapping("/")
+    public String index() {
+        return "Hello World";
+    }
     @CrossOrigin
     @PostMapping("/exchange/convert")
-    public List<ConvertOut> convert(@RequestBody ConvertIn in) {
-        List<ConvertOut> result = new LinkedList<ConvertOut>();
+    public List<ConvertDto> convert(@RequestBody ConvertDto in) {
+        List<ConvertDto> result = new LinkedList<ConvertDto>();
 
         for (final Currency currency : Currency.values()) {
-            final ConvertOut out = new ConvertOut();
+            final ConvertDto out = new ConvertDto();
             out.setCurrency(currency);
             if (currency.equals(in.getCurrency())) {
                 out.setValue(in.getValue());
@@ -33,7 +33,6 @@ public class ExchangeController {
             }
             result.add(out);
         }
-
         return result;
     }
 }

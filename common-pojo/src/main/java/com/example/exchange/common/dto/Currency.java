@@ -1,4 +1,4 @@
-package com.example.exchange.common.pojo;
+package com.example.exchange.common.dto;
 
 public enum Currency {
     EUR, USD, GBP

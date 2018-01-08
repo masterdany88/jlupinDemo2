@@ -1,6 +1,6 @@
 package com.example.exchange.service.interfaces;
 
-import com.example.exchange.common.pojo.Currency;
+import com.example.exchange.common.dto.Currency;
 
 import java.math.BigDecimal;
 

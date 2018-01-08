@@ -1,10 +1,11 @@
-package com.example.exchange.controller.exchange.in;
+package com.example.exchange.common.dto;
 
-import com.example.exchange.common.pojo.Currency;
+
+import com.example.exchange.common.dto.Currency;
 
 import java.math.BigDecimal;
 
-public class ConvertIn {
+public class ConvertDto {
     private BigDecimal value;
     private Currency currency;
 
